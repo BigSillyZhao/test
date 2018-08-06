@@ -1,0 +1,104 @@
+
+[[_modifyprojectusingpatch]]
+==== 修改项目
+....
+PATCH /projects/{projectId}
+....
+
+
+===== 说明
+修改项目
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|**Path**|**projectId** +
+__必填__|projectId|integer (int64)|
+|**Body**|**request** +
+__必填__|ProjectModifyRequest 请求体|<<_projectmodifyrequest,ProjectModifyRequest>>|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_3808c32871c72fffe80ac24d6ee639f2,GeneralResponse«ProjectBean»>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/projects/0
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "addedFileIds" : [ 0 ],
+  "changedFileIds" : [ {
+    "next" : 0,
+    "prev" : 0
+  } ],
+  "deletedFileIds" : [ 0 ],
+  "materialOverrideSetFileId" : 0,
+  "metaFileId" : 0,
+  "segmentFileId" : 0,
+  "transformMap" : {
+    "string" : [ 0.0 ]
+  }
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : {
+    "createTime" : "createTime",
+    "id" : 0,
+    "integrateId" : 0,
+    "integrateStatus" : "integrateStatus",
+    "name" : "name"
+  },
+  "message" : "message"
+}
+----
+
+
+

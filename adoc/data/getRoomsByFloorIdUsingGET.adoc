@@ -1,0 +1,106 @@
+
+[[_getroomsbyflooridusingget]]
+==== 单模型获取楼层对应房间列表
+....
+GET /v2/files/{fileId}/rooms
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Path**|**fileId** +
+__必填__|fileId|integer (int64)|
+|**Query**|**floorId** +
+__必填__|floorId|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_36ffe49fd4b01b34a9cf20f19b018291,GeneralResponse«List«Room»»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/files/0/rooms?floorId=string
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": [
+        {
+            "area": 7.256476003661832E7,
+            "id": "857279",
+            "levelId": "311",
+            "maxPt": {
+                "x": 7559.931517437632,
+                "y": 2899.406021420577,
+                "z": 0.0
+            },
+            "minPt": {
+                "x": -4938.068482562384,
+                "y": -3201.5939785816895,
+                "z": 0.0
+            },
+            "name": "Kitchen & Dining 101",
+            "perimeter": 40087.80000000279,
+            "properties": null
+        },
+        {
+            "area": 7.032000000000079E7,
+            "id": "857552",
+            "levelId": "311",
+            "maxPt": {
+                "x": 13061.931517437624,
+                "y": -3481.593978581688,
+                "z": 0.0
+            },
+            "minPt": {
+                "x": 7061.931517437606,
+                "y": -15201.59397858184,
+                "z": 0.0
+            },
+            "name": "Living 106",
+            "perimeter": 35440.00000000026,
+            "properties": null
+        }
+    ]
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+
+

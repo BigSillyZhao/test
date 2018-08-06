@@ -1,0 +1,87 @@
+
+[[_getassociationusingget]]
+==== 查询业务挂接状态
+....
+GET /association
+....
+
+
+===== 说明
+查询业务挂接状态
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|**Query**|**associationId** +
+__可选__|业务挂接ID|integer (int64)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_00287865529b94e699a5c8afeaf392b6,GeneralResponse«BusinessAssociationBean»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/association
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : {
+    "associationId" : 0,
+    "config" : "object",
+    "createTime" : "createTime",
+    "integrateId" : 0,
+    "name" : "name",
+    "priority" : 0,
+    "reason" : "reason",
+    "ruleFileIds" : [ 0 ],
+    "sourceId" : "6a6333bb67cc4f389acdc4e9da16330b",
+    "status" : "status"
+  },
+  "message" : "message"
+}
+----
+
+
+

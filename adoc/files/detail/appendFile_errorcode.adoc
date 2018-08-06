@@ -1,0 +1,12 @@
+===== 错误码
+
+[options="header"]
+|===
+|code|说明
+|system.error| 	BIMFACE系统异常
+|authentication.failed |	API访问合法性校验失败
+|file.name.invalid |	文件名称不合法
+|file.type.not.support |	文件类型不支持
+|file.length.invalid |	文件长度不合法
+|sourceid.invalid |	source id不合法
+|===

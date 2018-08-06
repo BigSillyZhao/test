@@ -1,0 +1,6 @@
+[options="header"]
+|===
+|字段|类型|必填|描述
+|type|enum|Y|构件分类：floor, specialty, category, family, familyType
+|item|object|N	|子结点类型
+|===

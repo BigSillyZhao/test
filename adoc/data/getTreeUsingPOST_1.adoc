@@ -1,0 +1,121 @@
+
+[[_gettreeusingpost_1]]
+==== 获取集成模型筛选树
+....
+POST /v2/integrations/{integrateId}/tree
+....
+
+
+===== 说明
+集成模型默认楼层分类树(v2.0), treeType接受三个值：floor, specialty和customized, 当treeType为"customized", 则desiredHierarchy表示了筛选树的层次，如：desiredHierarchy=specialty,systemtype
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Path**|**integrateId** +
+__必填__|integrateId|integer (int64)|
+|**Query**|**desiredHierarchy** +
+__可选__|desiredHierarchy|< string > array(multi)|
+|**Query**|**treeType** +
+__可选__|treeType|string|`"floor"`
+|**Body**|**requestBody** +
+__可选__|requestBody|<<_integrationtreeoptionalrequestbody,IntegrationTreeOptionalRequestBody>>|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_108535eac2e175cccc8ed847ffaf3ec6,GeneralResponse«Tree»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/integrations/0/tree
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "customizedNodeKeys" : {
+    "string" : "string"
+  },
+  "fileIdElementIds" : [ {
+    "fileId" : "1223445667788",
+    "elementId" : "1873264"
+  } ],
+  "sortedNamesHierarchy" : [ [ "string" ] ],
+  "sorts" : [ {
+    "nodeType" : "string",
+    "sortBy" : "sortBy",
+    "sortedValues" : [ "string" ]
+  } ]
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : {
+    "items" : [ {
+      "data" : "object",
+      "elementCount" : 0,
+      "id" : "4d1d32b6a8d24278ad634254d79023f8",
+      "items" : [ {
+        "data" : "object",
+        "elementCount" : 0,
+        "id" : "4d1d32b6a8d24278ad634254d79023f8",
+        "items" : [ "..." ],
+        "name" : "name",
+        "type" : "type"
+      } ],
+      "name" : "name",
+      "type" : "type"
+    } ],
+    "root" : "root"
+  },
+  "message" : "message"
+}
+----
+
+
+

@@ -1,0 +1,11 @@
+===== 错误码
+
+[options="header"]
+|===
+|code|说明
+|system.error	|BIMFace系统异常
+|integration.not.found	|没有找到集成模型
+|files.integrating	|模型正在集成中
+|files.integrate.failure|	模型集成失败
+|authentication.failed|	API访问合法性校验失败
+|===

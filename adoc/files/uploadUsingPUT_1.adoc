@@ -1,0 +1,78 @@
+
+[[_uploadusingput_1]]
+==== 普通文件流上传
+....
+PUT /upload
+....
+
+
+===== 说明
+使用普通文件流上传
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|*Header*|*Content-Length* +
+_可选_|数据流文件长度|integer (int64)|
+|*Query*|*name* +
+_必填_|文件的全名，使用URL编码（UTF-8），最多256个字符|string|
+|*Query*|*sourceId* +
+_可选_|调用方的文件源ID，不能重复|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|*200*|OK|<<_d9ca73ac43d7c6ced2c047acc5c261c5,GeneralResponse«FileBean»>>
+|*201*|Created|无内容
+|*401*|Unauthorized|无内容
+|*403*|Forbidden|无内容
+|*404*|Not Found|无内容
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/upload?name=string
+----
+
+
+====== 请求 header
+[source,json]
+----
+0
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": {
+        "accessId": "5nGlEwOIzrwCVaDZ",
+        "callbackBody": "eyJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkIiwiY2FsbGJhY2tIb3N0IjoiZmlsZS5iaW1mYWNlLmNvbSIsImNhbGxiYWNrVXJsIjoiaHR0cHM6Ly9maWxlLmJpbWZhY2UuY29tL29zcy9yZWNlaXZlIiwiY2FsbGJhY2tCb2R5Ijoib2JqZWN0PSR7b2JqZWN0fSZzaXplPSR7c2l6ZX0mZXRhZz0ke2V0YWd9Jm5hbWU9dGVzdC5wZGYmZmlsZUlkPTEzOTg3MzQwNTc3ODQ0MTYmYXBwa2V5PWFEbFBmMTNVdGlHczd5dUhDZDhlSFNMSGJISlRVOFNkJnNvdXJjZUlkPSZmaWxlQnVja2V0PWJmLXByb2Qtc3JjZmlsZSJ9",
+        "expire": 1532497705,
+        "host": "https://bf-prod-srcfile.oss-cn-beijing.aliyuncs.com",
+        "objectKey": "9cb19b7c92f949eda962184402cf58d5",
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNy0yNVQwNTo0ODoyNS4zNjVaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsNTM2ODcwOTEyMF0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCIiXV19",
+        "signature": "viKQEkLuwaifs21iYPKakq6ujog="
+    }
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+

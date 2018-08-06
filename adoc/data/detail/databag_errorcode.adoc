@@ -1,0 +1,13 @@
+===== 错误码
+
+[options="header"]
+|===
+|code|说明
+|system.error|BIMFace系统异常
+|file.not.found|	文件未找到
+|file.not.translated|	文件没有转换
+|file.translating|	文件转换中
+|file.translate.failure|	文件转换失败
+|authentication.failed|	API访问合法性校验失败
+|databag.not.exist	|数据包不存在
+|===

@@ -1,0 +1,5 @@
+[options="header"]
+|===
+|字段 |	类型 |	描述 	|示例
+|data |String |	viewToken |	389c28de59ee62e66a7d87ec12692a76
+|===

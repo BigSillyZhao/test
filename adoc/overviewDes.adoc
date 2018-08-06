@@ -1,0 +1,67 @@
+BIMFACE提供的服务端API，是BIMFACE开放平台的重要组成部分，由于整个流程中很多工作都是在服务端完成的，调用这些API能够完成以下操作：
+
+1、上传源文件
+
+2、发起文件转换
+
+3、发起模型集成
+
+4、查询模型信息
+
+*RESTful*
+
+'''
+BIMFACE提供的服务端API，都是RESTful风格的，是基于http(s)协议的。
+
+*http(s)请求*
+
+BIMFACE包含四种API请求类型（get、post、put、delete），分别表示对Resource的查询、添加、修改和删除，如下：
+[source,json]
+----
+GET https://api.bimface.com/translate
+----
+
+*http(s)返回*
+
+正常情况下，BIMFACE返回的状态码都是200（即：statusCode=200），API调用成功与否由返回的JSON数据决定，如下：
+
+1、成功（code=success）：
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": {
+        "token": "xxxx-xxxx-xxxx-xxxx",
+        "expireTime": "2016-05-01 01:11:11"
+    }
+}
+----
+2、失败（code=具体的错误码）：
+[source,json]
+----
+{
+    "code": "authentication.failed",
+    "message": "Invalid basic authentication token."
+}
+----
+*使用方式*
+
+'''
+由于RESTful API是比较成熟的互联网应用程序的API架构风格，因此，市面上有很多工具能够帮助用户快速调试BIMFACE的服务端API，下面举例说明
+
+*cUrl*
+
+curl是利用URL语法在命令行方式下工作的开源文件传输工具，详细介绍请百度搜索。
+
+*Postman*
+
+Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件，详细介绍请百度搜索。
+
+*SDK*
+
+BIMFACE官方也提供了JAVA语言版本的SDK，开发人员如果熟悉JAVA编程，引入bimface-java-sdk后调用API会更加方便。
+
+*编写服务端程序*
+
+几乎所有的服务端语言都支持RESTful API的调用，包括java、.net、php、Ruby、node.js……开发人员可以根据自身情况选择相应的语言。

@@ -1,0 +1,24 @@
+====== 回调（Callback）
+待BIMFace对比完毕后，根据应用传入的回调地址，BIMFace会通知对比结果，对比可能成功、也可能失败。
+Method
+----
+GET
+----
+Header
+|===
+|key|value
+|Content-Type|application/json
+|===
+Url Parameter
+|===
+|字段 |	类型 |描述| 	示例
+|compareId 	|Number |模型对比ID |857482189666208
+|status|String |模型对比状态|success（模型对比成功）、failed（模型对比失败）
+|reason |String |若对比失败，则返回失败原因 |…
+|thumbnail|String|模型对比模型的缩略图，多个缩略图用“,”分隔(如果有缩略图的话) |…
+|nonce|String|回调随机数|…
+|signature|String|签名|	…
+|===
+signature（签名）：为了确保回调消息是由BIMFace发出的，应用在收到回调消息后，须验证签名。签名的计算方式：MD5(“appKey:appSecret:fileId:status:nonce”)，如果应用计算的签名与BIMFace返回的签名一致，则证明该消息是安全可靠的。
+消息回执
+应用收到回调后，须向BIMFace发送回执，回执消息：HTTP STATUS 200

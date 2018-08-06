@@ -1,0 +1,8 @@
+===== 失败返回
+[source,json]
+----
+{
+    "code": "authentication.failed",
+    "message": "Token was not recognized."
+}
+----

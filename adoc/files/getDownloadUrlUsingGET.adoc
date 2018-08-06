@@ -1,0 +1,62 @@
+
+[[_getdownloadurlusingget]]
+==== 获取Object的url
+....
+GET /download/url
+....
+
+===== 说明
+应用通过该接口获取文件的下载地址，然后下载文件。下载地址有效时间是5分钟
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|*Query*|*fileId* +
+_必填_|文件id|integer (int64)|
+|*Query*|*name* +
+_可选_|文件名|string|
+|===
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/download/url?fileId=0
+----
+====== Request Body
+无
+[source,json]
+----
+curl -X GET
+-H "Authorization: bearer <your accessToken>"
+-H "Content-Type: application/json"
+"https://file.bimface.com/download/url?fileId=<your fileId>&name=<your file name>"
+----
+
+===== HTTP响应示例
+====== 响应 200
+====== HTTP STATUS
+200
+成功返回
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": "http://bf-prod-srcfile.oss-cn-beijing.aliyuncs.com/0eee9736d0df47f3a25cbaf683df36ae?Expires=1478226327&OSSAccessKeyId=5nGlEwOIzrwCVaDZ&Signature=%2B4ciGb6FRdUCZIX7QEyvtuivtb0%3D&response-content-disposition=attachment%3B%20filename%3D%E7%BB%93%E6%96%BD%E7%BF%BB%E6%A8%A1-2017.rvt"
+}
+----
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|字段|说明|类型|示例
+|data |文件下载地址 |String|…
+|===
+include::detail/fail.adoc[]
+include::detail/errorcode.adoc[]
+
+

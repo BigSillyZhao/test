@@ -1,0 +1,10 @@
+[options="header"]
+|===
+|accessId|String|OSS的访问Id
+|callbackBody|String|OSS回调file模块的回调体
+|expire|Long|超时时间，单位秒
+|host|String|OSS的CNAME
+|objectKey|String|文件在OSS中存储对象的key
+|policy	String	|上传的policy
+|signature|String|OSS签名
+|===

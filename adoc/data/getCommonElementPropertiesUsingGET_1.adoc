@@ -1,0 +1,128 @@
+
+[[_getcommonelementpropertiesusingget_1]]
+==== 集成模型获取构件属性
+....
+GET /v2/integrations/{integrateId}/commonElementProperties
+POST /v2/integrations/{integrateId}/commonElementProperties
+....
+
+
+===== 说明
+若传入的elementId不止一个，则返回这些elementId共同的属性，共同的定义为：属性key与value都相等
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Path**|**integrateId** +
+__必填__|integrateId|integer (int64)|
+|**Body**|**fileIdHashWithElementIdsList** +
+__可选__|fileIdHashWithElementIdsList|< <<_fileidhashwithelementids,FileIdHashWithElementIds>> > array|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_08e1ee5da8e2842ff5d107bea11e5a90,GeneralResponse«Property»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/integrations/0/commonElementProperties
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+====== 请求 body
+[source,json]
+----
+[
+    {
+        "fileIdHash": "bb88dbc3cefcef33025846050ca7d333",
+        "elementIds": [
+            "1294134",
+            "1294391",
+            "1294454"
+        ]
+    },
+    {
+        "fileIdHash": "1315961549185472",
+        "elementIds": [
+            "818701"
+        ]
+    }
+]
+----
+
+
+===== HTTP响应示例
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : {
+    "boundingBox": {
+        "max": {
+            "x": 30675.03,
+            "y": 42864.36,
+            "z": 13075.0
+        },
+        "min": {
+            "x": 29750.03,
+            "y": 42804.36,
+            "z": 11850.0
+        }
+    },
+    "elementId": "1294134",
+   "familyGuid": "b3d78c58-6d2b-4c81-943d-701f61db77ac-00003141",
+   "guid": "df727430-6073-427a-aeb8-e7591bbeed79-0013bf36",
+   "name": "玻璃",
+    "properties" : [ {
+       "group": "基本属性",
+      "items" : [
+       {
+           "key": "specialty",
+           "unit": null,
+           "value": "未设专业",
+           "valueType": null
+       },
+       {
+           "key": "floor",
+           "unit": null,
+           "value": "4F",
+           "valueType": null
+       }
+
+       ]
+    } ]
+  },
+  "message" :null
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+

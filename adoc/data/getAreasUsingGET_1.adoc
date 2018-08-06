@@ -1,0 +1,89 @@
+
+[[_getareasusingget_1]]
+==== 查询符合条件的areaIds
+....
+GET /v2/query/areaIds
+POST /v2/query/areaIds
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Body**|**dsl** +
+__必填__|dsl|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_e824415b515cfa6a55fce8d12a97a89c,GeneralResponse«List«SearchAreaIdsResp»»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/query/areaIds
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+====== 请求 body
+[source,json]
+----
+Body:
+{
+    "targetIds": [
+        "1315296732840480"
+    ],
+    "query": {
+        "contain": {
+            "floor": "311"
+        }
+    },
+    "targetType": "file"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : [ {
+    "areaIds" : [ "123" ,"456"],
+    "targetId" : "1315296732840480"
+  } ],
+  "message" : null
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+
+

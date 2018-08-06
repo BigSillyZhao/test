@@ -1,0 +1,6 @@
+[options="header"]
+|===
+|字段|类型|描述|示例
+|id|String|	familyType id，取值为familyType对象上的guid	|...
+|name|String|名称|...
+|===

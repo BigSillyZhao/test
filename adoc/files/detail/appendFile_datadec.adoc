@@ -1,0 +1,10 @@
+[options="header"]
+|===
+|字段|类型|说明
+|appendFileId |	Long |	append file id
+|length |	Long 	|文件长度
+|name |	String |	文件名
+|position |	Long |	追加上传位置
+|status 	|String 	|追加文件状态notstart、uploading、pause、complete
+|createTime |	String |	追加文件创建时间
+|===

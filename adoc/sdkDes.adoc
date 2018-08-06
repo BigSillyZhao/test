@@ -1,0 +1,73 @@
+=== Java SDK
+适用于 Java5 及以上版本。
+
+*使用方式*
+
+'''
+可以通过两种方式引入BIMFACE的SDK：
+
+*1、把bimface-java-sdk和第三方依赖包全部引入到Java工程*
+
+http://doc.bimface.com/book/restful/assets/jar/bimface-java-sdk-2.0.5.1.jar[bimface-java-sdk-2.0.5.1.jar（请右击另存为）]
+
+第三方依赖包：
+
+http://doc.bimface.com/book/restful/assets/jar/fastjson-1.2.12.jar[fastjson-1.2.12.jar（请右击另存为）]
+
+http://doc.bimface.com/book/restful/assets/jar/okhttp-2.5.0.jar[okhttp-2.5.0.jar（请右击另存为）]
+
+http://doc.bimface.com/book/restful/assets/jar/okio-1.6.0.jar[okio-1.6.0.jar（请右击另存为)]
+
+*2、使用Maven配置工具进行管理*
+
+请 http://www.baidu.com/s?wd=maven[百度搜索]Maven的使用方式。
+[source,xml]
+----
+<dependency>
+    <groupId>com.bimface</groupId>
+    <artifactId>bimface-java-sdk</artifactId>
+    <version>2.0.5.1</version>
+</dependency>
+----
+*示例程序*
+
+'''
+BIMFACE在Github上编写了简单的入门程序，请点击链接: https://github.com/bimface/bimface-java-sample[Java示例程序]
+
+*初始化BIMFACE*
+[source,java]
+----
+String appKey = "<your appKey>";
+String appSecret = "<your appSecret>";
+BimfaceClient bimfaceClient = new BimfaceClient(appKey, appSecret);
+----
+*上传文件*
+[source,java]
+----
+// PUSH方式
+FileBean fileBean = bimfaceClient.upload(name, contentLength, inputStream);
+
+// PULL方式
+FileBean fileBean = bimfaceClient.upload(name, url);
+----
+*发起文件转换*
+[source,java]
+----
+TranslateBean translateBean = bimfaceClient.translate(fileId, callback);
+----
+*获取转换状态*
+[source,java]
+----
+TranslateBean translateBean = bimfaceClient.getTranslate(fileId);
+----
+*回调，验证签名*
+待BIMFACE回调应用时，为验证callback的合法性，请通过以下方式校验。
+[source,java]
+----
+Boolean legal = bimfaceClient.validateSignature(signature, fileId, status, nonce);
+----
+*获取viewToken*
+[source,java]
+----
+String viewToken = bimfaceClient.getViewTokenByFileId(fileId);
+----

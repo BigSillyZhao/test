@@ -1,0 +1,20 @@
+[options="header"]
+|===
+
+|字段|类型|说明| 示例
+
+|createTime|String|创建时间|2016-10-24 14:47:10
+
+|etag|String|文件etag|…
+
+|fileId|Number|文件id|…
+
+|length|Number|文件长度 |1024
+
+|name|String|文件名|结构.rvt
+
+|status|String|上传状态|uploading(上传中)、failed（上传失败）、success(上传完毕)
+
+|suffix |String|文件名后缀|rvt
+
+|===

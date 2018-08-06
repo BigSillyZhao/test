@@ -1,0 +1,83 @@
+
+[[_getelementsusingpost_1]]
+==== 查询符合条件的elementIds
+....
+POST /v2/query/elementIds
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Body**|**dsl** +
+__必填__|dsl|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_1ec720ee5a0b5c211ec6ccd367650d6f,GeneralResponse«List«SearchElementIdsResp»»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/query/elementIds
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : [ {
+    "elementIds" : [ "string" ],
+    "targetId" : "ea98ae8d8b5147a49df81e8d28e9bbec"
+  } ],
+  "message" : "message"
+}
+----
+
+
+

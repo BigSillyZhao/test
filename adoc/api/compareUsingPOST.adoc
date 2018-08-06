@@ -1,0 +1,97 @@
+
+[[_compareusingpost]]
+==== 发起模型对比
+....
+POST /compare
+....
+
+
+===== 说明
+不同版本的模型文件上传并转换成功后，即可发起模型对比。由于对比不能立即完成，BIMFace支持在模型对比完成以后，通过Callback机制通知应用；另外，应用也可以通过接口查询对比状态
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|*Body*|*request* +
+_必填_|request请求体|<<_modelcomparerequest,ModelCompareRequest>>|
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/compare
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+    "sources": [
+        {
+            "previousFileId": 1248789071339712,
+            "followingFileId": 1248789039587520
+        }
+    ],
+    "name": "我的对比模型",
+    "priority": 2,
+    "callback": "http://www.bimface.com"
+}
+----
+
+include::detail/compare_bodydatadec.adoc[]
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|*200*|OK|<<_75831995758d85ecb92841b9dd2052f6,GeneralResponse«ModelCompareBean»>>
+|*201*|Created|无内容
+|*401*|Unauthorized|无内容
+|*403*|Forbidden|无内容
+|*404*|Not Found|无内容
+|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": {
+        "compareId": 1399354028695616,
+        "createTime": "2018-07-26 10:48:45",
+        "name": "我的对比模型",
+        "priority": 2,
+        "reason": null,
+        "sourceId": null,
+        "status": "success",
+        "thumbnail": null
+    }
+}
+----
+include::detail/compare_resdatadec.adoc[]
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+include::detail/compare_callback.adoc[]

@@ -1,0 +1,83 @@
+
+[[_getassociationsbybusinessidusingget]]
+==== 根据业务ID查询对应构件
+....
+GET /v2/integrations/{integrateId}/businessTypes/{businessType}/businesses/{businessId}/associations
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer "`
+|*Path*|*businessId* +
+_必填_|业务ID|string|
+|*Path*|*businessType* +
+_必填_|业务挂接类型|string|
+|*Path*|*integrateId* +
+_必填_|集成ID|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|*200*|OK|<<_9b1f7e775fa0166e6ced3fb27d62f242,GeneralResponse«List«BusinessElementAssociation»»>>
+|*401*|Unauthorized|无内容
+|*403*|Forbidden|无内容
+|*404*|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/integrations/string/businessTypes/string/businesses/string/associations
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data": [
+      {
+          "businessFlag": "test_flag1",
+          "businessId": "business_id_2",
+          "businessType": "test_type1",
+          "elementIds": [
+              "element_id_1",
+              "element_id_2"
+          ],
+          "integrateId": "test_case"
+      }
+  ],
+  "message" : null
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+
+
+

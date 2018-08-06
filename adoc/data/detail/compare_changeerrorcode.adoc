@@ -1,0 +1,12 @@
+===== 错误码
+
+[options="header"]
+|===
+|code|说明
+|system.error|BIMFace系统异常
+|authentication.failed|API访问合法性校验失败
+|compare.not.found|对比id不存在
+|compare.not.complete|对比还末完成
+|compare.failed	|对比失败
+|change.not.found	|差异未找到
+|===

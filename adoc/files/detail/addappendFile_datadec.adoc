@@ -1,0 +1,11 @@
+[options="header"]
+|===
+|字段|类型|说明
+|fileId |	Long 	|文件id
+|name |	String 	|文件名
+|suffix| 	String| 	文件名后缀
+|etag |	String 	|文件etag
+|length| 	Long |	文件长度
+|status| 	String| 	上传状态
+|createTime 	|String |	创建时间
+|===

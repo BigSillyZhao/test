@@ -1,0 +1,8 @@
+===== 错误码
+[options="header"]
+|===
+|code |	说明
+|system.error|	BIMFace系统异常
+|authentication.failed|API访问合法性校验失败
+|vrDatabag.not.found|vrDatabag未找到
+|===

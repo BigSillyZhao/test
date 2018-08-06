@@ -1,0 +1,142 @@
+
+[[_translateusingput]]
+==== 发起文件转换
+....
+PUT /translate
+....
+
+
+===== 说明
+文件上传成功后，即可发起对该文件的转换。由于转换不能立即完成，BIMFace支持在文件转换完成以后，通过Callback机制通知应用；另外，应用也可以通过接口查询转换状态
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|*Body*|*request* +
+_必填_|FileTranslateRequest请求体|<<_filetranslaterequest,FileTranslateRequest>>|
+|===
+
+===== Request Body
+
+常规场景
+[source,json]
+----
+{
+    "source":{
+        "fileId":857482189666208,
+        "compressed":false,
+        "rootName":"root.rvt"
+    },
+    "priority":2,
+    "callback":"http://www.app.com/receive",
+    "config":null
+}
+----
+使用模型内置材质场景
+[source,json]
+----
+{
+    "source":{
+        "fileId":857482189666208,
+        "compressed":false,
+        "rootName":"root.rvt"
+    },
+    "priority":2,
+    "callback":"http://www.app.com/receive",
+    "config":{"texture":true}
+}
+----
+使用模型外部材质场景（上传的文件必须为压缩包，压缩包内同级目录包含模型文件和关联的所有材质文件，转换时必须指定rootName为主文件）
+[source,json]
+----
+{
+    "source":{
+        "fileId":1234621112557376,
+        "compressed":true,
+        "rootName":"bimface_2018_打包材质&系统材质库.rvt"
+    },
+    "priority":2,
+    "callback":"http://www.app.com/receive",
+    "config":{"texture":true}
+}
+----
+===== HTTP请求示例
+[source,json]
+----
+curl -X PUT
+-H "Authorization: bearer <your accessToken>"
+-H "Content-Type: application/json"
+-d '{ {"fileId":<your fileId>, "compressed":<true or false>,"rootName":<your rootName>}, "callback":"<your callback url>"}'
+"https://api.bimface.com/translate"
+----
+
+===== 请求 path
+----
+/translate
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+====== 请求 body
+[source,json]
+----
+{{
+     "source": {
+         "fileId": 1248789071339712,
+         "compressed": false,
+         "rootName": "bimface_2018.rvt"
+     },
+     "priority": 2,
+     "callback": "http://www.bimface.com"
+ }
+----
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|*200*|OK|<<_0d62edbaa00e151859097fb4fdea8dbc,GeneralResponse«FileTranslateBean»>>
+|*201*|Created|无内容
+|*401*|Unauthorized|无内容
+|*403*|Forbidden|无内容
+|*404*|Not Found|无内容
+|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": {
+        "createTime": "2017-12-25 17:23:46",
+        "fileId": 1248789071339712,
+        "name": "bimface_2018.rvt",
+        "priority": 1,
+        "reason": null,
+        "status": "success",
+        "thumbnail": [
+            "https://m.bimface.com/e766f8bb69915a822b009e0fee6f2280/thumbnail/96.png",
+            "https://m.bimface.com/e766f8bb69915a822b009e0fee6f2280/thumbnail/256.png"
+        ]
+    }
+}
+----
+include::detail/filetranslate_datadec.adoc[]
+include::detail/filetranslate_errorcode.adoc[]
+
+
+

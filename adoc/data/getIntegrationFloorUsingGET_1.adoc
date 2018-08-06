@@ -1,0 +1,82 @@
+
+[[_getintegrationfloorusingget_1]]
+==== 集成模型楼层信息
+....
+GET /integrations/{integrateId}/floors
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer "`
+|*Path*|*integrateId* +
+_必填_|integrateId|integer (int64)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|*200*|OK|<<_7930339deff780466372a2893c90c18f,GeneralResponse«List«Floor»»>>
+|*401*|Unauthorized|无内容
+|*403*|Forbidden|无内容
+|*404*|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/integrations/0/floors
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : [ {
+   {
+       "archElev": -200.0,
+       "elevation": -200.0,
+       "id": "268503",
+       "miniMap": "m.bimface.com/b62c55b55078e1c2ff46eb97d37c3871/resource/model/maps/F00.png",
+       "name": "F00",
+       "structElev": -200.0
+   },
+   {
+       "archElev": 27100.0,
+       "elevation": 27100.0,
+       "id": "275375",
+       "miniMap": null,
+       "name": "机房层",
+       "structElev": 27100.0
+    }
+    ],
+  "message" : null
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]

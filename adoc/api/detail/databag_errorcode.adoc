@@ -1,0 +1,20 @@
+===== 错误码
+
+[options="header"]
+|===
+|code|说明
+|system.error|BIMFACE系统异常
+|authentication.failed|API访问合法性校验失败
+|offline.databag.not.found |离线数据包未找到
+|file.not.translated |	文件没有发起转换，不能生成离线包
+|file.translating |	文件正在转换中，不能生成离线包
+|file.translate.failure|	文件转换失败，不能生成离线包
+|integration.not.found |	集成模型未找到
+|integration.not.translated|	模型未集成，不能生成离线包
+|integration.translating |	模型正在集成中，不能生成离线包
+|integration.translate.failure| 	模型集成失败，不能生成离线包
+|compare.not.found |对比文件未找到
+|compare.not.translated |	对比文件没有转换，不能生成离线包
+|compare.translating |	对比文件转换中，不能生成离线包
+|compare.translate.failure |	对比文件转换失败，不能生成离线包
+|===

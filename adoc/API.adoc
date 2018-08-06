@@ -1,0 +1,263 @@
+include::operations/api/getAccessTokenUsingPOST.adoc[]
+== 源文件相关
+include::operations/files/uploadUsingPUT_1.adoc[]
+include::operations/files/getFileMetadataUsingGET.adoc[]
+include::operations/files/listFilesUsingGET.adoc[]
+include::operations/files/getDownloadUrlUsingGET.adoc[]
+include::operations/files/supportedFileFormatsUsingGET.adoc[]
+include::operations/files/uploadPolicyUsingGET.adoc[]
+include::operations/files/receiveUsingPOST.adoc[]
+include::operations/files/deleteFileUsingDELETE.adoc[]
+== 断点续传
+include::operations/files/createAppendFileUsingPOST.adoc[]
+include::operations/files/getAppendFileUsingGET.adoc[]
+include::operations/files/appendUploadUsingPOST.adoc[]
+
+== 文件转换相关
+include::operations/api/translateUsingPUT.adoc[]
+include::operations/api/getTranslateStatusUsingGET.adoc[]
+//单模型楼层信息
+//include::operations/data/getFloorUsingGET.adoc[]
+//单模型获取构件属性
+//include::operations/data/getPropertyUsingGET.adoc[]
+//单模型构件分类树
+//include::operations/data/getTreeUsingGET_3.adoc[]
+//单模型查询构件
+//include::operations/data/singleModelGetElementsUsingGET.adoc[]
+//三维视点或二维视图信息
+//include::operations/data/singleModelGetViewsUsingGET.adoc[]
+//单模型获取钢筋工程量
+//include::operations/data/getBarUsingGET.adoc[]
+== 单模型相关
+//单模型获取构件属性
+include::operations/data/getCommonElementPropertiesUsingGET.adoc[]
+//单模型查询构件
+include::operations/data/getElementIdsUsingGET.adoc[]
+//单模型获取构件材质
+include::operations/data/getElementMaterialUsingGET.adoc[]
+//单模型获取构件工程量
+//include::operations/data/getAggregatedElementQuantityUsingGET.adoc[]
+//单模型批量获取构件属性
+include::operations/data/getElementsUsingGET.adoc[]
+//单模型获取构件属性
+include::operations/data/getElementUsingGET_1.adoc[]
+//单模型文件 id 与楼层信息映射
+include::operations/data/getFloorsMappingsUsingGET.adoc[]
+//单模型楼层信息
+include::operations/data/getFloorsUsingGET.adoc[]
+//单模型获取链接
+include::operations/data/getLinksUsingGET.adoc[]
+//单模型获取房间属性
+include::operations/data/getRoomPropertyUsingGET.adoc[]
+//单模型获取楼层对应房间列表
+include::operations/data/getRoomsByFloorIdUsingGET.adoc[]
+//单模型获取楼层对应Area列表
+include::operations/data/getAreassByFloorIdUsingGET.adoc[]
+//单模型获取Area
+include::operations/data/getAreaUsingGET.adoc[]
+//单模型构件分类树
+include::operations/data/getTreeUsingGET_1.adoc[]
+//单模型获取三维视点或二维视图信息
+include::operations/data/getViewsUsingGET.adoc[]
+//drawingSheets
+include::operations/data/singleModelGetDrawingSheetsUsingGET.adoc[]
+//获取模型数据包meta信息
+include::operations/data/getModelMetaUsingGET.adoc[]
+
+== 模型集成相关
+//发起文件集成
+include::operations/api/integrateUsingPUT.adoc[]
+//发起igms文件集成
+include::operations/api/integrateUsingPUT_1.adoc[]
+//删除文件集成
+include::operations/api/delIntegrateUsingDELETE.adoc[]
+//自定义构造集成模型构件分类树
+include::operations/data/customizeTreeUsingPUT.adoc[]
+//集成模型获取楼层对应Area列表
+include::operations/data/getAreasUsingGET.adoc[]
+//选定构件构造构件分类树
+include::operations/data/getElementTreeUsingPUT.adoc[]
+//集成模型默认楼层分类树(v2.0)
+include::operations/data/getFloorTreeUsingGET.adoc[]
+//集成模型bounding box
+include::operations/data/getIntegrationFloorUsingGET.adoc[]
+//集成模型楼层信息
+include::operations/data/getIntegrationFloorUsingGET_1.adoc[]
+//集成模型获取构件属性
+include::operations/data/getPropertyUsingGET_1.adoc[]
+//获取离线渲染结果图片
+include::operations/data/getRenderResultUsingGET.adoc[]
+//集成模型默认专业分类树(v2.0)
+include::operations/data/getSpecialtyTreeUsingGET.adoc[]
+//集成模型构件分类树(v1.0)[deprecated]
+//include::operations/data/getTreeUsingGET_4.adoc[]
+//集成模型查询构件
+//include::operations/data/integrateModelGetElementsUsingGET.adoc[]
+//集成模型获取构件工程量聚合结果
+//include::operations/data/getAccumulativeQuantitiesUsingGET.adoc[]
+//集成模型模型获取Area属性
+include::operations/data/getAreaUsingGET_1.adoc[]
+//集成模型获取构件钢筋详情
+include::operations/data/getBarsUsingGET.adoc[]
+//集成模型获取构件钢筋详情
+include::operations/data/getBarsUsingGET_1.adoc[]
+//集成模型获取构件属性
+include::operations/data/getCommonElementPropertiesUsingGET_1.adoc[]
+//集成模型查询构件
+include::operations/data/getElementIdsUsingGET_1.adoc[]
+//集成模型获取构件材质
+//include::operations/data/getElementMaterialUsingGET_1.adoc[]
+//集成模型获取构件工程量
+//include::operations/data/getElementQuantitiesUsingGET.adoc[]
+//集成模型获取构件工程量
+//include::operations/data/getElementQuantitiesUsingGET_1.adoc[]
+//集成模型批量获取构件属性
+include::operations/data/getElementsUsingGET_1.adoc[]
+//集成模型获取构件属性
+include::operations/data/getElementUsingGET_2.adoc[]
+//集成模型获取构件属性
+include::operations/data/getElementUsingGET_3.adoc[]
+//获取集成模型视点信息
+include::operations/data/getFileViewsUsingGET.adoc[]
+//集成模型楼层信息
+include::operations/data/getFloorsUsingGET_1.adoc[]
+//查询指定的集成模型内参与集成的子文件信息
+include::operations/data/getIntegrateFilesUsingGET.adoc[]
+//集成模型获取楼层对应房间列表
+include::operations/data/getRoomsUsingGET.adoc[]
+//集成模型模型获取房间属性
+include::operations/data/getRoomUsingGET.adoc[]
+//获取集成模型的流水段树
+//include::operations/data/getSegmentTreeUsingGET.adoc[]
+//获取集成模型筛选树
+include::operations/data/getTreeUsingGET_2.adoc[]
+
+
+== 模型对比相关
+//发起模型对比
+include::operations/api/compareUsingPOST.adoc[]
+//获取模型对比状态
+include::operations/api/queryUsingGET.adoc[]
+//删除模型对比状态
+include::operations/api/deleteUsingDELETE.adoc[]
+//获取模型构件对比差异
+//include::operations/data/getElementChangeUsingGET.adoc[]
+//获取模型对比结果
+//include::operations/data/getModelCompareResultUsingGET.adoc[]
+//获取模型构件对比差异
+include::operations/data/getElementChangeUsingGET.adoc[]
+//获取模型对比构件分类树
+include::operations/data/getTreeUsingGET.adoc[]
+//分页获取模型对比结果
+include::operations/data/pageGetModelCompareResultUsingGET.adoc[]
+
+//== 材质相关
+//根据 id 获取材质配置方案
+//include::operations/data/getMaterialSetUsingGET.adoc[]
+
+
+== rfa文件相关
+//=== V1版本
+//rfa文件族类型属性key列表
+//include::operations/data/getElementUsingGET.adoc[]
+//rfa文件族类型属性列表
+//include::operations/data/getFamilyTypePropertyUsingGET.adoc[]
+//rfa文件族类型列表
+//include::operations/data/listRfaFamilyTypesUsingGET.adoc[]
+//=== V2版本
+//rfa文件族类型属性key列表
+include::operations/data/getFamilyPropertyNamesUsingGET.adoc[]
+//rfa文件族类型属性列表
+include::operations/data/getFamilyTypePropertyUsingGET_1.adoc[]
+//rfa文件族类型列表
+include::operations/data/getFamilyTypesUsingGET.adoc[]
+
+
+== 业务挂接相关
+=== V1版本
+//提取业务挂接结果: 下载url
+include::operations/data/getBizAssoResultUsingGET.adoc[]
+//发起业务挂接
+include::operations/api/associateUsingPOST.adoc[]
+=== V2版本
+//新增双向业务挂接,可以在request body中指定新增项，也可以指定从其他集成拷贝
+include::operations/data/addAssociationsUsingPOST.adoc[]
+//根据业务ID查询对应构件
+include::operations/data/getAssociationsByBusinessIdUsingGET.adoc[]
+//根据构件ID查询对应业务挂接
+include::operations/data/getAssociationsByElementIdUsingGET.adoc[]
+//删除业务挂接
+include::operations/data/deleteAssociationsByBizIdsUsingDELETE.adoc[]
+//删除业务ID关联的业务挂接
+include::operations/data/deleteAssociationsByBusinessIdUsingDELETE.adoc[]
+//删除构件关联的业务挂接
+include::operations/data/deleteAssociationsByElementIdUsingDELETE.adoc[]
+//删除业务挂接
+include::operations/data/deleteAssociationsByElementsUsingDELETE.adoc[]
+
+//== 项目相关
+//新建项目
+//include::operations/api/createProjectUsingPOST.adoc[]
+//查询项目
+//include::operations/api/getProjectUsingGET.adoc[]
+//查询项目集成列表
+//include::operations/api/getProjectIntegratesUsingGET.adoc[]
+//修改项目
+//include::operations/api/modifyProjectUsingPATCH.adoc[]
+
+
+== 查询相关
+//查询符合条件的areaIds
+include::operations/data/getAreasUsingGET_1.adoc[]
+//查询符合条件的elementIds
+include::operations/data/getElementsUsingGET_2.adoc[]
+//构件搜索API支持返回指定属性的所有可能值
+include::operations/data/getPropertyValuesUsingGET.adoc[]
+//查询符合条件的roomIds
+include::operations/data/getRoomsUsingGET_1.adoc[]
+
+//== Spark相关
+//=== V2版本
+//查询符合条件的elementIds
+//include::operations/data/getElementsUsingGET_3.adoc[]
+//构件搜索API支持返回指定属性的所有可能值
+//include::operations/data/getPropertyValuesUsingGET_1.adoc[]
+
+
+== 离线数据包相关
+//=== 旧版本
+//文件ID创建离线数据包
+include::operations/api/createTranslateOfflineDatabagUsingPUT.adoc[]
+//模型对比ID创建离线数据包
+include::operations/api/createCompareOfflineDatabagUsingPUT.adoc[]
+//文件集成ID创建离线数据包
+include::operations/api/createIntegrateOfflineDatabagUsingPUT.adoc[]
+//查询文件离线数据包
+include::operations/api/getTranslateOfflineDatabagUsingGET.adoc[]
+//查询模型对比离线数据包
+include::operations/api/getCompareOfflineDatabagUsingGET.adoc[]
+//查询集成模型离线数据包
+include::operations/api/getIntegrateOfflineDatabagUsingGET.adoc[]
+//获取数据包大小
+include::operations/data/getDatabagSizeUsingGET.adoc[]
+//获取dwg模型zip包下载地址
+include::operations/data/getDwgModelDownloadUrlUsingGET.adoc[]
+//获取单模型数据包下载地址
+include::operations/data/getFileDatabagDownloadUrl2UsingGET.adoc[]
+//获取集成模型离线数据包下载地址
+include::operations/data/getIntegrateDatabagDownloadUrlUsingGET.adoc[]
+//=== 新版本
+//获取DWG文件转换生成的pdf文件的url
+include::operations/data/getDwgPdfUrlUsingGET.adoc[]
+//获取DWG文件转换生成的预览图片的url
+include::operations/data/getDwgPreviewImageUrlUsingGET.adoc[]
+//获取缩略图url
+include::operations/data/getFileThumbnailUrlUsingGET.adoc[]
+
+== 获取ViewToken
+include::operations/api/getViewTokenByFileIdUsingGET.adoc[]
+//根据集成ID,文件ID获取viewToken
+include::operations/data/getViewTokenByIntegrateIdUsingPOST.adoc[]
+== 分享链接相关
+include::operations/api/createUsingPOST.adoc[]
+include::operations/api/deleteUsingDELETE_1.adoc[]

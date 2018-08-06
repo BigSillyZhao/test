@@ -1,0 +1,101 @@
+
+[[_getelementusingget_1]]
+==== 单模型获取构件属性
+....
+GET /v2/files/{fileId}/elements/{elementId}
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer "`
+|*Path*|*elementId* +
+_必填_|elementId|string|
+|*Path*|*fileId* +
+_必填_|fileId|integer (int64)|
+|===
+
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/files/0/elements/string
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|*200*|OK|<<_08e1ee5da8e2842ff5d107bea11e5a90,GeneralResponse«Property»>>
+|*401*|Unauthorized|无内容
+|*403*|Forbidden|无内容
+|*404*|Not Found|无内容
+|===
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : {
+    "boundingBox" : {
+      "max": {
+          "x": 26116.14,
+          "y": 20758.44,
+          "z": 5228.407
+      },
+      "min": {
+          "x": 24996.02,
+          "y": 20296.92,
+          "z": 4200.0
+      }
+    },
+   "elementId": "1109329",
+   "familyGuid": "88a0f081-de6a-4591-9b97-669a6040c2c9-0011fbf8",
+   "guid": "d1a4da20-4a6c-42c6-96e1-29f3cd4d17b8-0010ed51",
+   "name": "书柜2",
+    "properties" : [ {
+      "group" : "基本属性",
+      "items" : [
+       {
+           "key": "specialty",
+           "unit": null,
+           "value": "",
+           "valueType": null
+       },
+       {
+           "key": "floor",
+           "unit": null,
+           "value": "2F",
+           "valueType": null
+       }
+       ]
+    } ]
+  },
+  "message" : "message"
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+

@@ -1,0 +1,84 @@
+
+[[_getintegrateofflinedatabagusingget]]
+==== 查询集成模型离线数据包
+....
+GET /integrations/{integrateId}/offlineDatabag
+....
+
+
+===== 说明
+通过集成模型ID查询离线数据包
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|*Header*|*Authorization* +
+_必填_|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|*Path*|*integrateId* +
+_必填_|通过集成模型ID查询离线数据包|integer (int64)|
+|===
+
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/integrations/0/offlineDatabag
+----
+===== Request Body
+无
+----
+curl -X GET
+-H "Authorization: bearer <your accessToken>"
+-H "Content-Type: application/json"
+https://api.bimface.com/integrations/{your integrateId}/offlineDatabag
+----
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|*200*|OK|<<_485ddf6b9670062be8529a4594f2eb02,GeneralResponse«List«DatabagDerivativeBean»»>>
+|*401*|Unauthorized|无内容
+|*403*|Forbidden|无内容
+|*404*|Not Found|无内容
+|===
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": {
+        "createTime": "2017-12-25 17:42:06",
+        "databagVersion": "3.0",
+        "integrateId": 1248789977538784,
+        "reason": null,
+        "status": "success"
+    }
+}
+----
+
+include::detail/databag_resdatadec.adoc[]
+include::detail/databag_errorcode.adoc[]
+
+

@@ -1,0 +1,14 @@
+===== 错误码
+
+[options="header"]
+|===
+|code|说明
+|system.error |BIMFACE系统异常
+|authentication.failed |API访问合法性校验失败
+| invalid.time.format|startTime或endTime格式不正确
+|invalid.time.range|endTime早于或等于startTime
+|invalid.file.status|status不是合法的值（uploading，success，failure之一）
+|invalid.offset|offset小于0
+|invalid.row.count|rows小于0，或大于最大值500
+|not.global.scope.permission|没有查询全局文件的权限
+|===

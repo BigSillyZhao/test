@@ -1,0 +1,127 @@
+
+[[_getfileviewsusingget]]
+==== 获取集成模型视点信息
+....
+GET /v2/integrations/{integrateId}/fileViews
+....
+
+
+===== 说明
+根据viewType筛选结果集，viewType接受7个值：FloorPlan（楼层俯视二维视图），ThreeD（三维视图），CeilingPlan（天花板仰视二维视图），Elevation（轴侧二维视图），EngineeringPlan，Rendering，DrawingSheet；当不给出viewType值时，则返回所有集合
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Path**|**integrateId** +
+__必填__|integrateId|integer (int64)|
+|**Query**|**viewType** +
+__可选__|viewType|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_5d41317f82bcf57a092da90907dccd5f,GeneralResponse«List«FileViews»»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/integrations/0/fileViews
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : [ {
+     "fileId": 1294551293780160,
+    "views": [
+        {
+            "cropBox": [
+                -30480.0,
+                -30480.0,
+                -30480.0,
+                30480.0,
+                30480.0,
+                30480.0
+            ],
+            "elevation": 3599.9999999999995,
+            "id": "695",
+            "levelId": "694",
+            "name": "二层",
+            "outline": [
+                -326.9430644167913,
+                -306.87725335475113,
+                338.1804066386095,
+                149.7624446921211
+            ],
+            "preview": {
+                "height": 703,
+                "path": "m.bimface.com/85f49f848c5f6ac0ff7f21a72db1f82c/resource/thumbnails/695/695.png",
+                "width": 1024
+            },
+            "thumbnails": [
+                "m.bimface.com/85f49f848c5f6ac0ff7f21a72db1f82c/resource/thumbnails/695/695.96x96.png"
+            ],
+            "viewPoint": {
+                "origin": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rightDirection": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": 100,
+                "upDirection": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
+                "viewDirection": [
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "viewType": "FloorPlan"
+        }
+    ]
+  } ],
+  "message" : null
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]

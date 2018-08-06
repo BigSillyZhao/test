@@ -1,0 +1,129 @@
+
+[[_integrateusingput_1]]
+==== 发起igms文件集成
+....
+PUT /integrate/igms
+....
+
+
+===== 说明
+对于revit文件来说，当单个文件转换成功以后，可以将多个revit文件集成，生成一个全专业/楼层模型。由于集成不能立即完成，BIMFACE支持在模型集成完成以后，通过Callback机制通知调用方；另外，调用方也可以通过接口查询集成状态
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|**Body**|**request** +
+__可选__|文件集成请求体|<<_fileintegraterequest,FileIntegrateRequest>>|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_b12dbf11069bce3a0ebde55079063bea,GeneralResponse«FileIntegrateBean»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/integrate/igms
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+    "sources": [
+        {
+            "fileId": 1248789071339712,
+            "specialty": "建筑",
+            "specialtySort": 0,
+            "floor": "F01",
+            "floorSort": 0
+        },
+        {
+            "fileId": 1248789039587520,
+            "specialty": "建筑",
+            "specialtySort": 0,
+            "floor": "F02",
+            "floorSort": 1
+        }
+    ],
+    "floorSort": [
+        "F01",
+        "F02"
+    ],
+    "specialtySort": [
+        "建筑"
+    ],
+    "config": "{}",
+    "name": "我的合并模型",
+    "priority": 2,
+    "callback": "http://www.bimface.com"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+    "code": "success",
+    "message": null,
+    "data": {
+        "createTime": "2018-07-26 10:48:46",
+        "integrateId": 1399354034651200,
+        "name": "我的合并模型",
+        "priority": 2,
+        "reason": null,
+        "sourceId": null,
+        "status": "success",
+        "thumbnail": [
+            "https://m.bimface.com/914f4164afe09ad24db1323734e9d159/thumbnail/96.png",
+            "https://m.bimface.com/914f4164afe09ad24db1323734e9d159/thumbnail/256.png"
+        ]
+    }
+}
+----
+|===
+|字段 |	类型 |描述 |示例   |
+|integrateId |	Number |集成Id|85929027838566|
+|name|String|调用方设置的名称|我的合并模型|
+|status |String|集成状态|processing（集成中）、success（集成成功）、failed（集成失败）|
+|priority |Number |优先级，数字越大，优先级越低 |	1, 2, 3|
+|thumbnail|String[]|缩略图地址| …|
+|reason |String|若集成失败，返回失败原因|…|
+|createTime|String|集成开始时间，格式：yyyy-MM-dd hh:mm:ss|2015-08-08 12:23:11|
+|===
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+
+

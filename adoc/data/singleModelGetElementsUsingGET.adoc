@@ -1,0 +1,82 @@
+
+[[_singlemodelgetelementsusingget]]
+==== 单模型查询构件
+....
+GET /element/id
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Query**|**categoryId** +
+__可选__|构件类型ID|string|
+|**Query**|**family** +
+__可选__|族|string|
+|**Query**|**familyType** +
+__可选__|族类型|string|
+|**Query**|**fileId** +
+__可选__|文件ID|integer (int64)|
+|**Query**|**floor** +
+__可选__|楼层|string|
+|**Query**|**specialty** +
+__可选__|专业|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_singlemodelelementsswaggerdisplay,SingleModelElementsSwaggerDisplay>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/element/id
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "message" : " ",
+  "data" : "[1873264, 17823491]"
+}
+----
+
+
+

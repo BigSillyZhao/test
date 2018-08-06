@@ -1,0 +1,96 @@
+
+[[_getbarsusingget_1]]
+==== 集成模型获取构件钢筋详情
+....
+GET /v2/integrations/{integrateId}/files/{fileId}/elements/{elementId}/bars
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Path**|**elementId** +
+__必填__|elementId|string|
+|**Path**|**fileId** +
+__必填__|fileId|integer (int64)|
+|**Path**|**integrateId** +
+__必填__|integrateId|integer (int64)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0ee283fce91cddb055d0ad764d2e1240,GeneralResponse«List«Bar»»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/integrations/0/files/0/elements/string/bars
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : [ {
+    "amountInfo": "",
+    "barDiam": 8.0,
+    "barLb": 1,
+    "barNum": "箍筋.1",
+    "barPicFilename": "\\0",
+    "count": 26,
+    "countExpr": "Ceil(500/100)+1+Ceil(450/100)+1+Ceil(625/100)+Ceil(1600/200)-1",
+    "elementId": "11408733172490767684",
+    "expr": "2*((500-2*20)+(500-2*20))+2*(11.9*d)",
+    "exprExplain": "",
+    "formula": "2*H+2*B+8*d",
+    "id": "-3012318747630568462",
+    "isHoop": false,
+    "isNmbar": false,
+    "joint": 0,
+    "jointExpr": "(Ceil((2030-42*8)/(8000-42*8))-1)*42*8",
+    "jointType": "0",
+    "length": 2030,
+    "level": "1",
+    "params": "3285=460;3286=460",
+    "scpj": "",
+    "sourceFileId": "86988552",
+    "totalWeight": 20.848100000000002,
+    "type": 0,
+    "unitWeight": 0.8018500000000001,
+    "wastage": 0.0
+  } ],
+  "message" : null
+}
+----
+include::detail/fail.adoc[]
+include::detail/error.adoc[]

@@ -1,0 +1,9 @@
+===== 错误码
+
+[options="header"]
+|===
+|code|说明
+|system.error |BIMFACE系统异常
+|authentication.failed |API访问合法性校验失败
+|file.not.found  |文件不存在
+|===

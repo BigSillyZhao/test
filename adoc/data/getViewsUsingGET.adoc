@@ -1,0 +1,118 @@
+
+[[_getviewsusingget]]
+==== 单模型获取三维视点或二维视图信息
+....
+GET /v2/files/{fileId}/views
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer "`
+|**Path**|**fileId** +
+__必填__|fileId|integer (int64)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_281a7276afefb0372d4379f23629b2e6,GeneralResponse«List«View»»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+===== 生成
+
+* `application/json`
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/v2/files/0/views
+----
+
+
+====== 请求 header
+[source,json]
+----
+"string"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : "success",
+  "data" : [ {
+    "cropBox" : [
+      -12147.804809235151,
+      -19279.554054815613,
+     -30480.0,
+     22637.545576143948,
+     6805.089759789783,
+     30480.0
+    ],
+    "elevation": 0.0,
+   "id": "312",
+   "levelId": "311",
+   "name": "Level 1",
+    "outline" : [
+      -146.52900292249365,
+     -215.01048476685295,
+     240.3331231070219,
+     110.78415780710446
+     ],
+    "preview" : {
+       "height": 862,
+      "path": "m.bimface.com/e766f8bb69915a822b009e0fee6f2280/resource/thumbnails/312/312.png",
+      "width": 1024
+    },
+    "thumbnails" : [
+     "m.bimface.com/e766f8bb69915a822b009e0fee6f2280/resource/thumbnails/312/312.96x96.png"
+     ],
+    "viewPoint" : {
+      "origin": [
+          0.0,
+          0.0,
+          0.0
+      ],
+      "rightDirection": [
+          1.0,
+          0.0,
+          0.0
+      ],
+      "scale": 100,
+      "upDirection": [
+          0.0,
+          1.0,
+          0.0
+      ],
+      "viewDirection": [
+          0.0,
+          0.0,
+          1.0
+      ]
+    },
+    "viewType" : "FloorPlan"
+  } ],
+  "message" :null
+}
+----
+
+include::detail/fail.adoc[]
+include::detail/error.adoc[]
+
