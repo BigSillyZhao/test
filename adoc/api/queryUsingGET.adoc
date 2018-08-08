@@ -15,11 +15,29 @@ GET /compare
 [options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
 |===
 |类型|名称|说明|类型|默认值
-|*Header*|*Authorization* +
-_必填_|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
-|*Query*|*compareId* +
-_必填_|模型对比ID|integer (int64)|
+|**Header**|**Authorization** +
+__必填__|authorization header|string|`"bearer dc671840-bacc-4dc5-a134-97c1918d664b"`
+|**Query**|**compareId** +
+__必填__|模型对比ID|integer (int64)|
 |===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_75831995758d85ecb92841b9dd2052f6,GeneralResponse«ModelCompareBean»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
 
 ===== 生成
 
@@ -33,14 +51,7 @@ _必填_|模型对比ID|integer (int64)|
 ----
 /compare?compareId=0
 ----
-===== Request Body
-无
-----
-curl -X GET
--H "Authorization: bearer <your accessToken>"
--H "Content-Type: application/json"
-"https://api.bimface.com/compare?compareId=<your compareId>"
-----
+
 
 ====== 请求 header
 [source,json]
@@ -48,16 +59,7 @@ curl -X GET
 "string"
 ----
 
-===== 响应
 
-[options="header", cols=".^2a,.^14a,.^4a"]
-|===
-|HTTP代码|说明|类型
-|*200*|OK|<<_75831995758d85ecb92841b9dd2052f6,GeneralResponse«ModelCompareBean»>>
-|*401*|Unauthorized|无内容
-|*403*|Forbidden|无内容
-|*404*|Not Found|无内容
-|===
 ===== HTTP响应示例
 
 ====== 响应 200
@@ -66,20 +68,18 @@ curl -X GET
 {
   "code" : "success",
   "data" : {
-   "compareId": 1248793222422752,
-   "createTime": "2017-12-25 17:32:01",
-   "name": "我的合并模型",
-   "priority": 1,
-   "reason": null,
-    "sourceId" : "ad2e8ff292e5429586cc6d96d876bbb0",
+    "compareId" : 0,
+    "createTime" : "createTime",
+    "name" : "name",
+    "priority" : 0,
+    "reason" : "reason",
+    "sourceId" : "517e1f60a8b241558830fe8cc88f38d9",
     "status" : "status",
     "thumbnail" : [ "string" ]
   },
   "message" : "message"
 }
 ----
-include::detail/compare_resdatadec.adoc[]
-include::detail/fail.adoc[]
-include::detail/error.adoc[]
+
 
 
