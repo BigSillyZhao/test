@@ -1,9 +1,0 @@
-===== 错误码
-
-[options="header"]
-|===
-|code|说明
-|system.error|BIMFace系统异常
-|authentication.failed|API访问合法性校验失败
-|compare.failed|对比失败
-|===

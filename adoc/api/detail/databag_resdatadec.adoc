@@ -1,9 +1,0 @@
-[options="header"]
-|===
-|字段|类型|描述 |示例
-|fileId |Long |文件转换Id |8167234891
-|databag|Version |String|离线包版本2.0
-|status|String|离线包状态|processing(生成中)、success(生成成功)、failed(生成失败)
-|reason|String|若生成失败，返回失败原因 |…
-|createTime|String|离线包生成时间|2017-10-17 09:21:59
-|===

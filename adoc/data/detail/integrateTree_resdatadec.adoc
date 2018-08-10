@@ -1,9 +1,0 @@
-[options="header"]
-|===
-|字段|类型|必填|描述
-|root|enum|Y|楼层
-|type|enum|Y|floor, specialty, category, family, familyType
-|id	|string	|N	|结点id，只有category结点类型有id
-|name|	string|Y|结点名称
-|elementCount|number|Y	|结点所包含的构件数量.
-|===
