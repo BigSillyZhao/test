@@ -1,9 +1,0 @@
-[options="header"]
-|===
-|字段 |	类型 |	描述 	|示例
-|compareId |Number|对比ID |857482189666208
-|status |String |对比状态 |prepare（待对比）、processing（对比中）、success（对比成功）、failed（对比失败）
-|priority|Number |对比任务优先级|2
-|reason |String |若对比失败，返回失败原因 |…
-|createTime |String |对比开始时间，格式：yyyy-MM-dd hh:mm:ss |2016-10-14 14:29:16
-|===

@@ -1,6 +1,0 @@
-[options="header"]
-|===
-|字段 	|类型 |描述 	|示例
-|url |	String |分享链接的地址 	|https://api.bimface.com/preview/3ae4edc9
-|expireTime |	String| 分享链接失效时间，格式：yyyy-MM-dd HH:mm:ss |	2016-05-01 01:11:11
-|===
